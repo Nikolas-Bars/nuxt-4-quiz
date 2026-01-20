@@ -1,0 +1,40 @@
+@use "vars" as v;
+@use "sass-mq" as mq;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: "Gilroy";
+  font-size: 16px;
+  color: v.$white;
+  background-color: #33004c;
+  scroll-behavior: smooth;
+}
+
+.tooltip_custom {
+  position: absolute;
+  background-color: #171717EB;
+  color: #fff;
+  padding: 17px 20px 17px 20px;
+  border-radius: 10px;
+  font-size: 0.725rem;
+  white-space: nowrap;
+  display: none;
+  z-index: 1000;
+}
+
+.tooltip_custom::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform:translateX(-50%);
+  border-bottom: 6px solid #171717EB;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}

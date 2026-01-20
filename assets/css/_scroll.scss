@@ -1,0 +1,68 @@
+@use "vars" as v;
+
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: v.$yellow;
+}
+
+body {
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: v.$yellow;
+  }
+}
+
+body.scrollbar-pink {
+  &::-webkit-scrollbar-thumb {
+    background-color: v.$pink-8;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: v.$black;
+  }
+}
+
+body.scrollbar-pink {
+  ::-webkit-scrollbar-thumb {
+    background-color: v.$pink-8;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: v.$black;
+  }
+}
+
+/* Для Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: v.$yellow transparent;
+}
+
+body .scrollbar-track {
+  background-color: v.$purple-dark;
+}
+
+body .scrollbar-track-y {
+  width: 4px;
+}
+
+body .scrollbar-thumb {
+  background-color: v.$yellow;
+  border-radius: 0;
+  width: 4px;
+}
+
+.scroll-content {
+  width: 100%;
+}

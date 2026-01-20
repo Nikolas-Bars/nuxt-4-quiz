@@ -1,0 +1,30 @@
+@use "vars" as v;
+@use "sass-mq" with (
+  $breakpoints: v.$breakpoints
+);
+@use "normalize";
+@use "fonts";
+@use "main";
+@use "scroll";
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+footer {
+  margin-top: auto; /* "прилипает" вниз */
+}
+
+.ql-align-center {
+  text-align: center;
+}
+
+.ql-align-right {
+  text-align: right;
+}
+
+.ql-align-justify {
+  text-align: justify;
+}

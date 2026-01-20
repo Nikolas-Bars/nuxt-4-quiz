@@ -1,0 +1,118 @@
+$breakpoints: (
+        mobile: 320px,
+        mobileMiddle: 430px,
+        smallTablet: 640px,
+        tablet: 740px,
+        bigTablet: 800px,
+        desktop: 980px,
+        bigDesktop: 1024px,
+        containerMax: 1180px,
+        desktopMiddle: 1200px,
+        wide: 1300px,
+        desktop-hd: 1920px,
+);
+
+$white: #ffffff;
+$white-milk: #ffeddb;
+$black-default: #000000;
+$black: #1a1a1a;
+$black2: #181920;
+$black-3: #413459;
+$black-4: #111111;
+$black-light: #010319;
+$purple: #6937d2;
+$purple-2: #2a1b3f;
+$purple-3: #8c63b7;
+$purple-4: #7742a9;
+$purple-5: #281c3e;
+$purple-6: #3D2073;
+$purple-7: #F3EDFF;
+$purple-8: #302045;
+$purple-dark: #421b75;
+$purple-very-darkness: #241a36;
+$purple-very-dark: #04041a;
+$purple-opacity: #8c63b7;
+$purple-normal: #630088;
+$purple-border: #3f2b5b;
+$purple-input: #45005f;
+$purple-grey: #5D5075;
+$purple-upcoming-games: rgb(48, 32, 69); // Upcoming games swiper background
+$yellow: #ffe400;
+$yellow-2: #ffd902;
+$yellow-3: #f1df71;
+$yellow-4: #a69435;
+$yellow-light: #fdd835;
+$yellow-dark: #e8b229;
+$green: #39e1a5;
+$green-2: #50dfa4;
+$green-3: #28dfa1;
+$green-4: #2ae2a3;
+$green-5: #25D366; // whatsapp
+$green-dark: #228d68;
+$blue: #27b3f4;
+$blue-dark: #00245a;
+$blue-2: #633ece;
+$blue-3: #01a2a5;
+$blue-4: #6c3ae7;
+$blue-5: #000423;
+$blue-6: #0a84dc;
+$blue-7: #0097e6;
+$blue-8: #00a2ff;
+$blue-9: #000626;
+$blue-10: #00a3ff;
+$blue-11: #008ee2;
+$blue-12: #020c25;
+$blue-13: #0088CC; // telegram
+$blue-14: #45668E; // vkontakte
+
+$pink: #fc1aa3;
+$pink-2: #e20078;
+$pink-dark: #a51356;
+$pink-very-dark: #551394;
+$pink-light: #e417fc;
+$pink-very-light: #a91bba;
+$pink-2: #e20078;
+$pink-3: #9b03be;
+$pink-4: #d33af6;
+$pink-5: #3f3171;
+$pink-6: #c600ee;
+$pink-7: #e9006a;
+$pink-8: #ff0072;
+
+$pink-button: #ff0072;
+$pink-info: #e20078; // Game's place details on main page
+
+$red-error: #e21313;
+$red-error-2: #d72a2d;
+$grey: #8e8e8e;
+$grey-2: #a9a8a8;
+$grey-3: #f8f8f8;
+$grey-4: #cccccc;
+$grey-5: #a08dba;
+$grey-6: #cdcdcd;
+$grey-7: #777b87;
+$grey-8: #a9a9a9;
+$grey-9: #f0f0f0;
+$grey-10: #f3f4f7;
+$grey-11: #a4a4a4;
+$grey-12: #efefef;
+$grey-13: #6c6c6c;
+$grey-14: #757579;
+$grey-15: #CECFD5;
+$grey-16: #E5E5E5;
+$grey-17: #D5D5D5;
+$grey-18: #B3BDCB;
+$grey-19: #8597B2;
+$grey-20: #999999;
+$grey-21: #F1EFF5;
+$grey-22: #727272;
+$grey-opacity: hsla(0, 0%, 100%, 0.5);
+$grey-dark: #313131;
+$input-placeholder: #777b87;
+
+$grey-info: #777b87; // In game details modal
+
+$red: #f00046;
+
+$transition-ui: 0.2s ease-out;
+$transition-smooth: 0.6s cubic-bezier(0.25, 1, 0.5, 1);

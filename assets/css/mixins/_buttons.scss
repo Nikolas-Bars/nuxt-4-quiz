@@ -1,0 +1,104 @@
+@use "../vars" as v;
+
+@mixin audio-button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 2px solid v.$yellow;
+  color: v.$yellow;
+  padding: 0.5rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  text-transform: uppercase;
+  font-family: "Gilroy";
+  font-weight: 800;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  user-select: none;
+}
+
+@mixin swiper-button {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 2px solid v.$blue;
+  border-radius: 4px;
+  padding: 0.5rem;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  text-transform: uppercase;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: v.$blue;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  user-select: none;
+
+  &[class*="prev"] {
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url("~/assets/icons/slider-arrow-blue.svg");
+      transform: scaleX(-1);
+    }
+
+    &:not(:empty)::before {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &[class*="next"] {
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url("~/assets/icons/slider-arrow-blue.svg");
+    }
+
+    &:not(:empty)::after {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &[class*="close"] {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url("~/assets/icons/close-blue.svg");
+    }
+
+    &:not(:empty)::after {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &[class*="disabled"],
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

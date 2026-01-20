@@ -1,0 +1,227 @@
+@use "../vars" as v;
+
+@mixin tipsContent {
+  p {
+    line-height: 1.68rem;
+    margin-bottom: 0.75rem;
+    text-indent: 1.5rem;
+  }
+  ul li {
+    margin-left: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+@mixin checkBoxText {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+}
+
+@mixin ralewayDefault {
+  font: 400 1rem/1.63rem Raleway;
+}
+
+@mixin raleway-40 {
+  font: 800 2.5rem Raleway;
+}
+
+@mixin raleway-20 {
+  font: 400 1.25rem/1.5 Raleway;
+}
+
+@mixin raleway-18 {
+  font: 800 1.13rem Raleway;
+}
+
+@mixin raleway-14 {
+  font: 400 0.88rem/1.4 Raleway;
+}
+
+@mixin akrobat-40 {
+  font: 900 2.5rem Gilroy;
+}
+
+@mixin akrobat-35 {
+  font: 900 2.1rem Gilroy;
+}
+
+@mixin akrobat-30 {
+  font: 300 1.5rem Gilroy;
+}
+
+@mixin akrobat-20 {
+  font: 300 1.25rem Gilroy;
+}
+
+@mixin akrobat-18 {
+  font: 300 1.13rem Gilroy;
+}
+
+@mixin akrobat-16 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-family: Gilroy;
+}
+
+@mixin h1 {
+  // 88px/16px
+  font-size: 5.5rem;
+  // 132px/16px
+  line-height: 8.25rem;
+}
+
+@mixin h2 {
+  // 44px/16px
+  font-size: 2.75rem;
+  // 60px/16px
+  line-height: 3.75rem;
+}
+
+@mixin h2-2 {
+  // 56px/16px
+  font-size: 3.5rem;
+  line-height: 4rem;
+}
+
+@mixin h3 {
+  // 32px/16px
+  font-size: 2rem;
+  // 40px/16px
+  line-height: 2.5rem;
+}
+
+@mixin h3-2 {
+  // 40px/16px
+  font-size: 2.5rem;
+  // 40px/16px
+  line-height: 2.5rem;
+}
+
+@mixin h4 {
+  // 24px/16px
+  font-size: 1.5rem;
+  // 32px/16px
+  line-height: 2rem;
+}
+
+@mixin h4-2 {
+  // 26px/16px
+  font-size: 1.625rem;
+  // 30px/16px
+  line-height: 1.875rem;
+}
+
+@mixin h4-3 {
+  // 28px/16px
+  font-size: 1.75rem;
+  // 30px/16px
+  line-height: 2.25rem;
+}
+
+@mixin h5 {
+  // 20px/16px
+  font-size: 1.25rem;
+  // 28px/16px
+  line-height: 1.75rem;
+}
+
+@mixin h6 {
+  // 16px/16px
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
+@mixin body-12 {
+  // 12px/16px
+  font-size: 0.75rem;
+  // 16px/16px
+  line-height: 1rem;
+}
+
+@mixin body-14 {
+  // 14px/16px
+  font-size: 0.875rem;
+  // 20px/16px
+  line-height: 1.25rem;
+}
+
+@mixin body-16 {
+  // 16px/16px
+  font-size: 1rem;
+  // 24px/16px
+  line-height: 1.5rem;
+}
+
+@mixin body-18 {
+  // 18px/16px
+  font-size: 1.125rem;
+  // 26px/16px
+  line-height: 1.625rem;
+}
+
+@mixin body-20 {
+  // 20px/16px
+  font-size: 1.25rem;
+  // 28px/16px
+  line-height: 1.75rem;
+}
+
+//повторяюиеся стили для магазина
+@mixin h2-shop {
+  font: 900 2.5rem/2.5rem Gilroy;
+
+  @media screen and (max-width: 740px) {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+}
+
+@mixin p-20-shop {
+  font: 500 1.25rem/1.5rem Raleway;
+}
+
+//повторяющиеся стили для корпоративов
+@mixin h2-corp {
+  font: 700 2rem/2.6rem Gilroy;
+  text-transform: uppercase;
+}
+
+//повторяющиеся стили для стримов
+@mixin h2-stream {
+  font-size: 1.875rem;
+  line-height: 2rem;
+  font-weight: 800;
+  font-family: "Gilroy";
+}
+
+@mixin streamLink {
+  background: linear-gradient(
+    90deg,
+    rgba(6, 164, 236, 1) 0%,
+    rgba(200, 21, 240, 1) 100%
+  );
+  background-size: 0% 2px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size cubic-bezier(0, 0.5, 0, 1) 0.3s;
+  color: v.$blue-11;
+
+  &:hover {
+    background-size: 100% 2px;
+  }
+}
+
+@mixin h2-tiny {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-family: "Gilroy", sans-serif;
+    font-weight: 900;
+}
+
+@mixin title-legend {
+  font-family: PFStampsPro;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}

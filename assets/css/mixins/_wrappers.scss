@@ -1,0 +1,12 @@
+@use "../vars" as v;
+
+@mixin homegame-wrapper {
+  max-width: 50rem;
+  margin: 0 auto;
+  background-color: v.$white-milk;
+  color: v.$black;
+  border-radius: 2px;
+  padding: 1.5rem;
+  box-shadow: 0 1.88rem 3.13rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+}
