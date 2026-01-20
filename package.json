@@ -15,9 +15,11 @@
     "@nuxt/image": "2.0.0",
     "eslint": "^9.0.0",
     "nuxt": "^4.2.2",
+    "pinia": "^3.0.4",
     "sass-mq": "^7.0.0",
     "vue": "^3.5.27",
     "vue-final-modal": "^4.5.5",
+    "vue-i18n": "^11.2.8",
     "vue-router": "^4.6.4"
   }
 }
