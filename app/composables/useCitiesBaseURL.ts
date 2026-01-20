@@ -20,7 +20,7 @@ export const useCitiesBaseURL = (event?: H3Event): string => {
   const isProduction = import.meta.env.PROD;
 
   let baseURL: string | undefined;
-
+    console.log('isProduction', isProduction,  'host', host)
   if (
     !isProduction ||
     mainDomain === "qpdv.ru" ||

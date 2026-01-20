@@ -4,7 +4,7 @@ import { useCitiesBaseURL } from "~/composables/useCitiesBaseURL";
 export const useCitiesStore = defineStore("cities", () => {
   const cities = ref<any[]>([]);
   const moscowSettings = ref<Record<string, any>>({});
-
+    console.log(useCitiesBaseURL(), 'useCitiesBaseURL()')
   const getCities = () => {
     return $fetch("api/cities/short", {
       baseURL: useCitiesBaseURL(),
