@@ -8,11 +8,11 @@
 // import { useI18n } from 'vue-i18n';
 // const { t } = useI18n();
 import TheHeroRD from "../components/local/main-page/TheHeroRD.vue";
-import bgImageSeo from "public/bg_image_seo.png";
-import {useSubdomain} from "~/composables/useSubdomain";
-import {useCityName} from "~/composables/useCityName";
+import { useSubdomain } from "~/composables/useSubdomain";
+import { useCityName } from "~/composables/useCityName";
 
 const subdomain = useSubdomain();
+const bgImageSeo = "/bg_image_seo.png";
 const { getCityNameBySubdomain } = useCityName();
 // Получаем название города: сначала пробуем из store, если нет - берем из маппинга по поддомену
 const cityName = computed(() => getCityNameBySubdomain(subdomain.value));
@@ -40,7 +40,7 @@ useHead({
     },
     {
       property: "og:image",
-      content: `https://${subdomain.value}.` + mainDomain + bgImageSeo,
+      content: `https://${subdomain.value}.${mainDomain}${bgImageSeo}`,
     },
     {
       property: "og:url",

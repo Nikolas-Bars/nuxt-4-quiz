@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import potter from "assets/img/potter-rd.png";
+import potter from "~/assets/img/potter-rd.png";
 import GameCardsBlockRd from "~/components/local/main-page/upcoming-games/GameCardsBlockRD.vue";
 import ContentContainer from "~/components/global/common-rd/content-container/ContentContainer.vue";
 import Tabs from "~/components/global/common-rd/Tabs.vue";

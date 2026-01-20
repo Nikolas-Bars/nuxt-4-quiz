@@ -1,10 +1,10 @@
-FROM node:19-alpine AS base
+FROM node:20-alpine AS base
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile && yarn cache clean
 ENV HOST=0.0.0.0
 
-FROM node:19-alpine AS local
+FROM node:20-alpine AS local
 ENV NODE_ENV=development
 ENV CHOKIDAR_USEPOLLING=true
 WORKDIR /var/www/site-dev

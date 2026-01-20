@@ -1,4 +1,4 @@
-name: qz-site-frontend
+name: nuxt-4-site-frontend
 services:
   # Production environment
   app-production:
@@ -9,10 +9,10 @@ services:
       dockerfile: .docker/Dockerfile
       args:
         NODE_ENV: production
-    container_name: main-front-production
+    container_name: nuxt-4-front-production
     restart: unless-stopped
     ports:
-      - '8081:3001'
+      - '8082:3001'
 
   # Staging environment
   app-staging:
@@ -23,10 +23,10 @@ services:
       dockerfile: .docker/Dockerfile
       args:
         NODE_ENV: staging
-    container_name: main-front-staging
+    container_name: nuxt-4-front-staging
     restart: unless-stopped
     ports:
-      - '8081:3001'
+      - '8082:3001'
 
   # Development environment
   app-development:
@@ -37,10 +37,10 @@ services:
       dockerfile: .docker/Dockerfile
       args:
         NODE_ENV: development
-    container_name: main-front-development
+    container_name: nuxt-4-front-development
     restart: unless-stopped
     ports:
-      - '8081:3001'
+      - '8082:3001'
 
   # Local development with hot-reload
   app-local:
@@ -52,18 +52,18 @@ services:
       args:
         NODE_ENV: development
       target: local
-    container_name: main-front-local
+    container_name: nuxt-4-front-local
     restart: always
     volumes:
       - ./:/var/www/site-dev/
       - /var/www/site-dev/.nuxt
       - /var/www/site-dev/node_modules
     ports:
-      - '8005:5173'
-      - '24678:24678'
+      - '8006:5173'
+      - '24679:24678'
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.app-local-external.rule=Host(`qz-site-frontend.localhost`) || HostRegexp(`[a-z0-9-]+.qz-site-frontend.localhost`)"
+      - "traefik.http.routers.app-local-external.rule=Host(`nuxt-4-site-frontend.localhost`) || HostRegexp(`[a-z0-9-]+.nuxt-4-site-frontend.localhost`)"
       - "traefik.http.routers.app-local-external.entrypoints=web"
       - "traefik.http.services.app-local.loadbalancer.server.port=5173"
       - "traefik.docker.network=shared_network"

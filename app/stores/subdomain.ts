@@ -64,8 +64,8 @@ export const useSubdomainStore = defineStore("subdomain", {
       let path;
       if (this.mainDomain === "localhost:8005") {
         path = "http://localhost:8005";
-      } else if (this.mainDomain === "qz-site-frontend.localhost") {
-        path = `http://${slug}.qz-site-frontend.localhost`;
+      } else if (this.mainDomain === "nuxt-4-site-frontend.localhost") {
+        path = `http://${slug}.nuxt-4-site-frontend.localhost`;
         return true;
       } else {
         path = `https://${slug}.quizplease.${domainZone}`;
@@ -187,12 +187,12 @@ export const useSubdomainStore = defineStore("subdomain", {
 
         if (
           (process.client && import.meta.env.PROD) ||
-          this.mainDomain === "qz-site-frontend.localhost"
+          this.mainDomain === "nuxt-4-site-frontend.localhost"
         ) {
           const currentUrl = new URL(window.location.href);
           const prot = import.meta.env.PROD ? "https" : "http";
           const newUrl =
-            this.mainDomain === "qz-site-frontend.localhost"
+            this.mainDomain === "nuxt-4-site-frontend.localhost"
               ? `${prot}://${newSubdomain}.${this.mainDomain}${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`
               : `${prot}://${newSubdomain}.${domainWithZone}${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`;
           window.location.replace(newUrl);
