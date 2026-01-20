@@ -1,0 +1,77 @@
+name: qz-site-frontend
+services:
+  # Production environment
+  app-production:
+    profiles: [ "production" ]
+    #    env_file: .env.local.production
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      args:
+        NODE_ENV: production
+    container_name: main-front-production
+    restart: unless-stopped
+    ports:
+      - '8081:3001'
+
+  # Staging environment
+  app-staging:
+    profiles: [ "staging" ]
+    #    env_file: .env.local.staging
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      args:
+        NODE_ENV: staging
+    container_name: main-front-staging
+    restart: unless-stopped
+    ports:
+      - '8081:3001'
+
+  # Development environment
+  app-development:
+    profiles: [ "development" ]
+    #    env_file: .env.local.development
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      args:
+        NODE_ENV: development
+    container_name: main-front-development
+    restart: unless-stopped
+    ports:
+      - '8081:3001'
+
+  # Local development with hot-reload
+  app-local:
+    profiles: [ "local" ]
+    env_file: .env.local
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+      args:
+        NODE_ENV: development
+      target: local
+    container_name: main-front-local
+    restart: always
+    volumes:
+      - ./:/var/www/site-dev/
+      - /var/www/site-dev/.nuxt
+      - /var/www/site-dev/node_modules
+    ports:
+      - '8005:5173'
+      - '24678:24678'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app-local-external.rule=Host(`qz-site-frontend.localhost`) || HostRegexp(`[a-z0-9-]+.qz-site-frontend.localhost`)"
+      - "traefik.http.routers.app-local-external.entrypoints=web"
+      - "traefik.http.services.app-local.loadbalancer.server.port=5173"
+      - "traefik.docker.network=shared_network"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true
