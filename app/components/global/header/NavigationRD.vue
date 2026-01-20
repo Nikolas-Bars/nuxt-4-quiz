@@ -66,7 +66,7 @@
         v-if="isMobileMenuOpen"
         class="navigation__overlay"
         @click="isMobileMenuOpen = false"
-      ></div>
+      />
     </transition>
   </div>
 </template>
