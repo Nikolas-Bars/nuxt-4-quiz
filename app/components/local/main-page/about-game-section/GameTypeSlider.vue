@@ -28,6 +28,7 @@
 
 <script setup lang="ts">
 import type { Swiper as SwiperType } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
 import GameTypeItem from "~/components/local/main-page/about-game-section/GameTypeItem.vue";
 import bigGame from "@/assets/img/game-types-rd/big-game.png";
 import bingo from "@/assets/img/game-types-rd/bingo.png";

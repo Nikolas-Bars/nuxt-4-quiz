@@ -15,8 +15,7 @@
           gap="clamp(0.5rem, 0.027rem + 1.08vw, 1rem)"
           bg-brightness="dark"
           :variant="'lined'"
-        >
-        </Tabs>
+        />
       </div>
     </div>
     <Swiper
@@ -38,10 +37,10 @@
 </template>
 
 <script setup lang="ts">
+import { Swiper, SwiperSlide } from "swiper/vue";
 import QuestionCard from "~/components/global/questions-block/QuestionCard.vue";
 import Tabs from "~/components/global/common-rd/Tabs.vue";
 import useScreenWidth from "~/hooks/useScreenWidth";
-import Button from "~/components/global/common-rd/Button.vue";
 const { screenWidth } = useScreenWidth();
 function getIsTablet() {
   return screenWidth.value < 880;
