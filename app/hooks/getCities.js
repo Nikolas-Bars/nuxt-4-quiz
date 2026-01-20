@@ -1,6 +1,5 @@
 import { storeToRefs } from "pinia";
 import { useCitiesStore } from "~/stores/cities";
-import { useGlobalSettingsStore } from "~/stores/global-settings";
 
 /**
  * Get global settings from store if process.client

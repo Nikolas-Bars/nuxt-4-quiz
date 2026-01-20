@@ -65,7 +65,7 @@ export const usePixelScript = () => {
     }
 
     // Проверяем, что мы находимся в браузере
-    if (!process.client || typeof document === "undefined") {
+    if (!import.meta.client || typeof document === "undefined") {
       return;
     }
     // Создаем временный div для парсинга HTML
@@ -140,7 +140,7 @@ export const usePixelScript = () => {
         }
 
         // Выполняем инъекцию только на клиенте
-        if (process.client) {
+        if (import.meta.client) {
           injectPixelScript(script);
         }
       }
