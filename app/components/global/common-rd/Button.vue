@@ -51,7 +51,7 @@ interface Props {
   target?: "_blank" | "_self" | "_parent" | "_top";
   value?: string | number | undefined;
   trailingIcon?: boolean;
-  gapSlot: string;
+  gapSlot?: string;
   disabled?: boolean;
   active?: boolean;
   // loading?: boolean;
