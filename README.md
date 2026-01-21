@@ -38,6 +38,28 @@ yarn dev
 bun run dev
 ```
 
+## Local Production Preview (Yarn)
+
+To correctly build and preview the application locally outside of Docker:
+
+1. **Environment Configuration**: 
+   The `yarn build` command reads from the `.env` file. Ensure you have a `.env` file in the root directory (you can copy it from `.env.local`):
+   ```bash
+   cp .env.local .env
+   ```
+
+2. **DNS Configuration**:
+   If your `BASE_URL` uses `qz-main-api.localhost`, you must map this domain to your local machine:
+   ```bash
+   sudo sh -c 'echo "127.0.0.1 qz-main-api.localhost" >> /etc/hosts'
+   ```
+
+3. **Build and Run**:
+   ```bash
+   yarn build
+   yarn preview
+   ```
+
 ## Production
 
 Build the application for production:
