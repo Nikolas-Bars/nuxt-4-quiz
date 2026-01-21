@@ -1,5 +1,6 @@
 // Composable для получения правильного baseURL в зависимости от домена
 import type { H3Event } from "h3";
+import { getRequestHeader } from "h3";
 import getCities from "~/composables/getCities";
 
 export const useBaseURL = (event?: H3Event): string => {
@@ -13,7 +14,9 @@ export const useBaseURL = (event?: H3Event): string => {
 
   // Получаем хост
   const host = import.meta.server
-    ? event?.node?.req?.headers?.host || useRequestHeaders(["host"]).host || ""
+    ? event
+      ? getRequestHeader(event, "host") || event.node?.req?.headers?.host || ""
+      : ""
     : import.meta.client
     ? window.location.host
     : "";

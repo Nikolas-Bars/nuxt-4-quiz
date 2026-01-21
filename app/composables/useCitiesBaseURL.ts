@@ -1,4 +1,5 @@
 import type { H3Event } from "h3";
+import { getRequestHeader } from "h3";
 
 export const useCitiesBaseURL = (event?: H3Event): string => {
   const config = useRuntimeConfig();
@@ -6,8 +7,9 @@ export const useCitiesBaseURL = (event?: H3Event): string => {
   // Получаем хост
   let host: string | undefined = "";
   if (import.meta.server) {
-    host =
-      event?.node?.req?.headers?.host || useRequestHeaders(["host"]).host || "";
+    host = event
+      ? getRequestHeader(event, "host") || event.node?.req?.headers?.host || ""
+      : "";
   } else if (import.meta.client) {
     host = window.location.host;
   }
@@ -22,6 +24,7 @@ export const useCitiesBaseURL = (event?: H3Event): string => {
   let baseURL: string | undefined;
     console.log('isProduction', isProduction,  'host', host)
   if (
+    !host ||
     !isProduction ||
     mainDomain === "qpdv.ru" ||
     mainDomain === "stagequizplease.ru"

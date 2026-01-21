@@ -106,9 +106,11 @@ export const useSubdomainStore = defineStore("subdomain", {
           window.location.href = `https://${subdomain}.quizplease.${domainZone}/`;
         } else {
           // На сервере используем Nuxt-редирект
-          return navigateTo(`https://${subdomain}.quizplease.${domainZone}/`, {
+          navigateTo(`https://${subdomain}.quizplease.${domainZone}/`, {
             external: true,
           });
+
+          return
         }
         return undefined; // Для TypeScript, хотя код после редиректа не выполнится
       }
