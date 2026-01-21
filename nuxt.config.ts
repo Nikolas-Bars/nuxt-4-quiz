@@ -25,8 +25,18 @@ export default defineNuxtConfig({
     "swiper/css/effect-cards",
     "vue-final-modal/style.css",
   ],
-  modules: ["@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/eslint", "nuxt-swiper"],
+  modules: [
+    "@pinia/nuxt",
+    "@nuxt/icon",
+    "@nuxt/image",
+    "@nuxt/eslint",
+    "nuxt-swiper",
+    "@nuxtjs/storybook"
+  ],
   icon: {
+    clientBundle: {
+      sizeLimitKb: 1024
+    },
     customCollections: [
       {
         prefix: "rd",
