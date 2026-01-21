@@ -1,15 +1,24 @@
 FROM node:25.4-alpine AS base
+RUN if ! command -v corepack >/dev/null 2>&1; then npm i -g corepack --force; fi
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile && yarn cache clean
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/releases/yarn-4.12.0.cjs .yarn/releases/
+RUN yarn install --immutable --inline-builds && yarn cache clean
 ENV HOST=0.0.0.0
 
 FROM node:25.4-alpine AS local
 ENV NODE_ENV=development
 ENV CHOKIDAR_USEPOLLING=true
 WORKDIR /var/www/site-dev
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile && yarn cache clean
+
+# Включаем Corepack для поддержки Yarn Berry
+RUN if ! command -v corepack >/dev/null 2>&1; then npm i -g corepack --force; fi \
+  && corepack enable \
+  && corepack prepare yarn@stable --activate
+
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn/releases/yarn-4.12.0.cjs .yarn/releases/
+RUN yarn install --immutable --inline-builds && yarn cache clean
 EXPOSE 5173
 CMD ["yarn", "dev", "--host", "0.0.0.0", "--port", "5173"]
 
