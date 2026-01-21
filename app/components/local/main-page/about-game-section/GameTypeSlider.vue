@@ -17,7 +17,7 @@
         </SwiperSlide>
       </Swiper>
       <button class="slider-nav slider-nav--prev" @click="slidePrev">
-        <NuxtIcon name="arrow-right-rd" />
+        <NuxtIcon name="arrow-right-rd" class="icon-rotated" />
       </button>
       <button class="slider-nav slider-nav--next" @click="slideNext">
         <NuxtIcon name="arrow-right-rd" />
@@ -183,9 +183,10 @@ const gameTypes = reactive([
     }
   }
 
-  &--prev :deep(.nuxt-icon) {
-    transform: rotate(180deg);
-  }
+}
+
+:deep(.icon-rotated) {
+  transform: rotate(180deg) !important;
 }
 
 :deep(.types-slider) {

@@ -22,7 +22,9 @@ const host = process.server
   : window.location.host;
 const parts = host?.split(".") || [];
 const mainDomain = parts.length > 2 ? parts.slice(1).join(".") : host;
-
+definePageMeta({
+  layout: "layout-rd",
+});
 useHead({
   title: `Играть в Квиз, плиз! в г. ${cityName.value} | Игры для компаний и корпоративов`,
   meta: [

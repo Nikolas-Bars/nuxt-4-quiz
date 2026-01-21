@@ -102,7 +102,7 @@
       >
         Скрыть
         <template #icon>
-          <NuxtIcon name="arrow-up-rd" />
+          <NuxtIcon name="arrow-up-rd" size="11" style="color: #29272a" />
         </template>
       </Button>
       <Button
@@ -117,7 +117,7 @@
       >
         Показать еще
         <template #icon>
-          <NuxtIcon name="arrow-down-rd" />
+          <NuxtIcon name="arrow-down-rd" size="11" style="color: #29272a" />
         </template>
       </Button>
       <hr
@@ -525,6 +525,7 @@ const difficultyTitle = (level?: LevelsEnum): string => {
     font-style: normal;
     font-weight: 600;
     line-height: clamp(0.75rem, 0.041rem + 1.62vw, 1.5rem); /* 150% */
+    border: 3px solid red;
     :deep(.nuxt-icon) {
       svg {
         width: clamp(0.375rem, 0.02rem + 0.81vw, 0.75rem);
@@ -564,3 +565,4 @@ const difficultyTitle = (level?: LevelsEnum): string => {
   }
 }
 </style>
+

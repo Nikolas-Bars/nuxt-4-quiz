@@ -19,6 +19,7 @@ try {
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  css: ["swiper/css", "~/assets/css/style.scss"],
   modules: ["@pinia/nuxt", "@nuxt/icon", "@nuxt/image", "@nuxt/eslint", "nuxt-swiper"],
   icon: {
     customCollections: [
