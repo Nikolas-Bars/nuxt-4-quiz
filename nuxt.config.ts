@@ -19,6 +19,13 @@ try {
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  vite: {
+    server: {
+      hmr: {
+        port: 24685
+      }
+    }
+  },
   css: [
     "~/assets/css/style.scss",
     "swiper/css",
