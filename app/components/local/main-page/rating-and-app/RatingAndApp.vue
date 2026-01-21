@@ -22,7 +22,7 @@ import AppLinksRd from "~/components/local/main-page/rating-and-app/AppLinksRd.v
   align-self: stretch;
   margin: 0 auto;
 }
-@include mq.mq($until: 900) {
+@include mq.mq($until: 900px) {
   .rating-app-main {
     padding: 0 16px;
   }
