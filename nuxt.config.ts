@@ -16,6 +16,9 @@ try {
   // If icons dir is missing during config eval, just skip aliases.
 }
 
+const isStorybook =
+  process.env.NUXT_STORYBOOK === "true" || process.env.STORYBOOK === "true";
+
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
@@ -38,7 +41,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxt/eslint",
     "nuxt-swiper",
-    "@nuxtjs/storybook"
+    ...(isStorybook ? ["@nuxtjs/storybook"] : []),
   ],
   icon: {
     clientBundle: {
